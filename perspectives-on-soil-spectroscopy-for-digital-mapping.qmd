@@ -424,7 +424,7 @@ This presentation:
 #| fig-width: 3
 #| fig-height: 3
 library(qrcode)
-plot(qr_code("https://l-ramirez-lopez.github.io/cac-2026-presentation/"))
+plot(qr_code("https://l-ramirez-lopez.github.io/fbas-2026/"))
 ```
 
 
@@ -454,7 +454,7 @@ This presentation:
 #| fig-height: 2
 #| label: qr-code
 library(qrcode)
-my_qr <- qr_code("https://l-ramirez-lopez.github.io/idrc-2026-presentation/")
+my_qr <- qr_code("https://l-ramirez-lopez.github.io/fbas-2026/")
 plot(my_qr)
 ```
 
