@@ -1,0 +1,274 @@
+/* -------------------------------------
+   Global Default White (optional)
+   ------------------------------------- */
+
+/*
+.reveal,
+.reveal .slides,
+.reveal .slide-background-content {
+  background-color: #fff !important;
+}
+*/
+
+/* Push title to the top of the slide */
+/* Title at the absolute top */
+.reveal .slides section.title-top h2,
+section.title-top h2 {
+  position: absolute !important;
+  top: -50px !important;
+  left: -40px !important;
+  right: -40px !important;
+  margin: 0 !important;
+  padding: 15px 40px !important;
+  z-index: 100 !important;
+  width: auto !important;
+}
+
+.reveal .plotly {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: block !important;
+}
+
+/* References slide - smaller text + scrollable */
+#refs,
+.reveal #refs,
+.reveal div#refs {
+  font-size: 0.4em !important;
+  line-height: 1.3 !important;
+  max-height: 70vh;
+  overflow-y: auto !important;
+  padding: 20px;
+}
+
+/* Style each reference entry */
+.reveal #refs .csl-entry {
+  margin-bottom: 0.5em;
+  text-align: left;
+}
+
+/* Vertically centre tables on slides */
+.reveal .slides section {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.reveal table.small-table,
+.reveal .small-table table {
+  font-size: 0.5em !important;
+}
+
+/* -------------------------------------
+   Title Slide - Layout and Styling
+   ------------------------------------- */
+.large-subtitle {
+  font-size: 1.8em !important;
+  font-weight: 600;
+  color: #5891C8;
+  margin-top: 0.5em;
+}
+
+#title-slide {
+  text-align: left !important;
+}
+
+#title-slide h1.title {
+  color: white !important;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
+  text-align: left !important;
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+  background-color: transparent !important;
+}
+
+#title-slide .subtitle,
+#title-slide .quarto-title-subtitle,
+#title-slide p.subtitle {
+  text-align: left !important;
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+  text-indent: 0 !important;
+}
+
+#title-slide .quarto-title-authors,
+#title-slide .quarto-title-author,
+#title-slide .quarto-title-author-name {
+  text-align: left !important;
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+}
+
+#title-slide .date,
+#title-slide .quarto-title-meta {
+  text-align: left !important;
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+}
+
+/* -------------------------------------
+   Title strip for content slides (full width)
+   ------------------------------------- */
+
+.reveal .slides section:not(#title-slide) h2 {
+  background-color: #8B3A2F;
+  color: white !important;
+  padding: 15px 40px;
+  margin: -20px -40px 30px -40px;
+  display: block;
+}
+
+/* -------------------------------------
+   Layout helpers
+   ------------------------------------- */
+
+.equation-vcenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+}
+
+.reveal .slides section.v-center {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.reveal .slides section.center-bullets { text-align: center; }
+.reveal .slides section.center-bullets ul { display: inline-block; text-align: left; }
+
+.reveal .slides section.title-center h2 { margin-bottom: 0.8em; }
+.reveal .slides section.title-center .subtitle { margin-top: 0.4em; display: block; }
+
+.reveal .slides section h2 + h3 { margin-top: 0.6em; }
+
+/* Headings color (won't affect title slide because we override) */
+.reveal h1,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  color: #1F374D;
+}
+
+/* -------------------------------------
+   Slide Logo
+   ------------------------------------- */
+.reveal .slide-logo {
+  position: absolute;
+  bottom: 10px;
+  left: 45px;
+  width: 100px;
+  height: auto;
+  z-index: 9999;
+}
+
+/* -------------------------------------
+   Progress Bar
+   ------------------------------------- */
+.reveal .progress span {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-color: #5891C8;
+  transition: transform 0.8s cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  transform-origin: 0 0;
+  transform: scaleX(0);
+}
+
+/* -------------------------------------
+   Root Variables & Fonts
+   ------------------------------------- */
+:root {
+  --r-link-color: #3F6F9C;
+  --r-link-color-dark: #2F5273;
+  --r-link-color-hover: #5891C8;
+  --r-main-font: "Roboto", sans-serif;
+  --r-heading-font: "Roboto", sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+.reveal {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.roboto-thin { font-weight: 100; }
+.roboto-light { font-weight: 300; }
+.roboto-regular { font-weight: 400; }
+.roboto-medium { font-weight: 500; }
+.roboto-semibold { font-weight: 600; }
+.roboto-bold { font-weight: 700; }
+.roboto-black { font-weight: 900; }
+
+.roboto-thin-italic { font-weight: 100; font-style: italic; }
+.roboto-light-italic { font-weight: 300; font-style: italic; }
+.roboto-regular-italic { font-weight: 400; font-style: italic; }
+.roboto-medium-italic { font-weight: 500; font-style: italic; }
+.roboto-semibold-italic { font-weight: 600; font-style: italic; }
+.roboto-bold-italic { font-weight: 700; font-style: italic; }
+.roboto-black-italic { font-weight: 900; font-style: italic; }
+
+.reveal h1, .reveal h2, .reveal h3 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+}
+
+.reveal p {
+  font-weight: 400;
+}
+
+.reveal strong {
+  font-weight: 600;
+}
+
+/* -------------------------------------
+   Slide-Specific Background Classes
+   ------------------------------------- */
+.white {
+  background-color: white !important;
+  color: black !important;
+}
+
+.black {
+  background-color: black !important;
+  color: white !important;
+}
+
+.reveal .slides section.white .slide-background-content {
+  background-color: white !important;
+}
+
+.reveal .slides section.black .slide-background-content {
+  background-color: black !important;
+}
+
+/* -------------------------------------
+   Image, Video, and Iframe Adjustments
+   ------------------------------------- */
+.reveal img,
+.reveal video,
+.reveal iframe {
+  max-width: 150%;
+  max-height: 95%;
+}
+
+/* -------------------------------------
+   Text Size Helpers
+   ------------------------------------- */
+.small-text {
+  font-size: 90%;
+}
+
+.small-text2 {
+  font-size: 50%;
+}
+
+.tiny-text {
+  font-size: 0.7em;
+  line-height: 1.2;
+}
