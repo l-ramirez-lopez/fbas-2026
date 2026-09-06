@@ -1,0 +1,62 @@
+name: Publish presentation to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+      # Temporary: lets the pipeline run and create gh-pages before merge.
+      # Remove after this branch is merged into main.
+      - github-pages-deploy
+  workflow_dispatch:
+
+# Allow the workflow to push the rendered output to the gh-pages branch.
+permissions:
+  contents: write
+
+concurrency:
+  group: pages-publish
+  cancel-in-progress: true
+
+jobs:
+  render-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Set up R
+        uses: r-lib/actions/setup-r@v2
+        with:
+          # Use Posit Public Package Manager so R packages install as
+          # precompiled Linux binaries (avoids compiling resemble/Rcpp).
+          use-public-rspm: true
+
+      - name: Install R package dependencies
+        uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          packages: |
+            any::knitr
+            any::rmarkdown
+            any::plotly
+            any::qrcode
+            any::resemble
+
+      - name: Render Quarto presentation
+        run: quarto render perspectives-on-soil-spectroscopy-for-digital-mapping.qmd
+
+      - name: Assemble site (index.html entry point)
+        run: |
+          mkdir -p _site
+          cp perspectives-on-soil-spectroscopy-for-digital-mapping.html _site/index.html
+
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
+          publish_branch: gh-pages
+          user_name: l-ramirez-lopez
+          user_email: ia.leonardo@gmail.com
