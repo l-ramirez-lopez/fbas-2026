@@ -194,6 +194,11 @@ plot_ly() |>
 ![Differences between the maps](fig/kansas-mapping3.png){fig-align="center"}
 
 
+## Example of soil spectroscopy for mapping [2/2]
+
+![Differences between the maps](fig/maps-calibration-set-sizes.png){fig-align="center"}
+
+
 ## {.title-top background-image="fig/soil_spectroscopy_hits_2026-09-06.png" background-size="contain" background-position="center" background-color="#2B2B2B"}
 
 
